@@ -319,6 +319,8 @@ BinaryTreeStatusCode ReadExpression(Tree* tree, IdNameTable* id_name_table, Lexe
 	if (!tree->root)
 		TREE_ERROR_CHECK(TREE_EXPRESSION_SYNTAX_ERROR);
 
+	SubtreeSizeFiller(tree->root);
+
 	return TREE_NO_ERROR;
 }
 

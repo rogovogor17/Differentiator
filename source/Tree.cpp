@@ -133,3 +133,20 @@ OpNum OpNameTableFindOperation(const char* string) {
 
 	return INVALID_OPERATION;
 }
+
+BinaryTreeStatusCode SubtreeSizeFiller(Node_t* node) {
+
+	if (!node)
+		return TREE_NO_ERROR;
+
+	if (node->left) {
+		SubtreeSizeFiller(node->left);
+		node->subtree_size += node->left->subtree_size + 1;
+	}
+	if (node->right) {
+		SubtreeSizeFiller(node->right);
+		node->subtree_size += node->right->subtree_size + 1;
+	}
+
+	return TREE_NO_ERROR;
+}

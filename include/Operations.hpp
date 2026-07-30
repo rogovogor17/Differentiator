@@ -25,4 +25,7 @@ struct Operation {
 	const char* tex_symbol;
 };
 
+const size_t AMOUNT_OF_PHRASES = 32;
+
 extern Operation op_name_table[];
+extern const char* math_phrases[];

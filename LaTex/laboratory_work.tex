@@ -19,7 +19,7 @@
 \vspace*{1cm}
 \textbf{МОСКОВСКИЙ ФИЗИКО-ТЕХНИЧЕСКИЙ ИНСТИТУТ (НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ)}\\
 \vspace{0.5cm} Физтех-школа Радиотехники и компьютерных технологий\\
-\vspace{5cm} \LARGE{Лабораторная работа 4.5.6\\
+\vspace{5cm} \LARGE{Лабораторная работа 2.3.3\\
 Исследование функции}
 \vfill
 \large{\textbf{Рогов Анатолий Б01-406}} \\
@@ -28,7 +28,7 @@
 \end{center}
 \end{titlepage}
 \chapter{Исходная функция}
-\hfil $f(x) = ({({1}+{({x}^{({x}+{(\sin{x})})})})}\cdot{x})$\\
+\hfil $f(x) = {\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}}$\\
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
@@ -39,120 +39,99 @@
 	width = 300,
 	height = 300,
 	restrict y to domain=-2:2,
+	restrict x to domain=-3:3,
 	grid = major,
 	enlargelimits=true,
 ]
 \legend{
 	$f^{(0)}$
 }
-\addplot[blue, samples=750]{(((((1))+((((x))^((((x))+((sin(deg((x)))))))))))*((x)))};
+\addplot[blue, samples=750]{(((sin(deg((((30))*((((x))^((3)))))))))+((((cos(deg((((((20))*((x))))+((1)))))))^((3)))))};
 \end{axis}
 \end{tikzpicture}
 \caption{График функции}
 \end{figure}
-\chapter{Разложение по формуле Тейлора до \\ $o((x - x_0)^{2})$ в точке $x_0 = 2$}
-\begin{center} $f^{0}(x) = ({({1}+{({x}^{({x}+{(\sin{x})})})})}\cdot{x})$ \end{center}
-\begin{center} $f^{0}(2) = 17.025$ \end{center}
 \section{Производная $f^{(1)}$ по переменной "$x$"}
 \renewcommand{\thesubsection}{\arabic{subsection}}
-\titleformat{\subsection}{\normalfont\bfseries}{}{0em}{#1\ \thesubsection}
-\subsection{Шаг}
-\begin{center} $(\sin{x})^{\prime} = (\cos{x})$ \end{center} 
+\titleformat{\subsection}{\normalfont\bfseries}{}{0em}{\thesubsection\ #1 }
+\subsection{По свойству 32 замечания 333}
+\begin{center} $({x}^{3})^{\prime} = {3}\cdot{{x}^{2}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({x}+{(\sin{x})})^{\prime} = ({1}+{(\cos{x})})$ \end{center} 
+\subsection{В греческой и античной математике знали и доказали тот факт, что}
+\begin{center} $({30}\cdot{{x}^{3}})^{\prime} = {30}\cdot{{3}\cdot{{x}^{2}}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({x}^{({x}+{(\sin{x})})})^{\prime} = ({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})$ \end{center} 
+\subsection{Следующее утверждение непосредственно следует из определения 17}
+\begin{center} $(\sin({{30}\cdot{{x}^{3}})})^{\prime} = {\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({1}+{({x}^{({x}+{(\sin{x})})})})^{\prime} = ({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})$ \end{center} 
+\subsection{По свойству 32 замечания 333}
+\begin{center} $({20}\cdot{x})^{\prime} = 20$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({({1}+{({x}^{({x}+{(\sin{x})})})})}\cdot{x})^{\prime} = ({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{x})}+{({1}+{({x}^{({x}+{(\sin{x})})})})})$ \end{center} 
+\subsection{Подобно тому как было установлено выше}
+\begin{center} $({{20}\cdot{x}}+{1})^{\prime} = 20$ \end{center} 
+
+\subsection{Последовательным применением теорем 1488 и 228 получаем}
+\begin{center} $((\cos({{{20}\cdot{x}}+{1})}))^{\prime} = {{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}$ \end{center} 
+
+\subsection{Тогда выполняется}
+\begin{center} $({(\cos({{{20}\cdot{x}}+{1})})}^{3})^{\prime} = {{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}$ \end{center} 
+
+\subsection{По следствию из теоремы А. Петровича получаем}
+\begin{center} $({\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}})^{\prime} = {{\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}}+{{{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}}$ \end{center} 
 
 \titleformat{\subsection}{\normalfont\bfseries}{}{0em}{\thesubsection \ #1\ }
 \subsection{Результат}
-\begin{center} $f^{(1)}(x) = ({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{x})}+{({1}+{({x}^{({x}+{(\sin{x})})})})})$ \end{center} 
-\begin{center} $f^{1}(2) = 36.4493$ \end{center}
-\section{Производная $f^{(2)}$ по переменной "$x$"}
+\begin{center} $f^{(0)}(x) = {\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}}$ \end{center} 
+\begin{center} $f^{(1)}(x) = {{\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}}+{{{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}}$ \end{center} 
+\chapter{Разложение по формуле Тейлора до \\ $o((x - x_0)^{1})$ в точке $x_0 = 0$}
+\begin{center} $f^{0}(x) = {\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}}$ \end{center}
+\begin{center} $f^{0}(0) = 0.157729$ \end{center}
+\section{Производная $f^{(1)}$ по переменной "$x$"}
 \renewcommand{\thesubsection}{\arabic{subsection}}
-\titleformat{\subsection}{\normalfont\bfseries}{}{0em}{#1\ \thesubsection}
-\subsection{Шаг}
-\begin{center} $(\sin{x})^{\prime} = (\cos{x})$ \end{center} 
+\titleformat{\subsection}{\normalfont\bfseries}{}{0em}{\thesubsection\ #1 }
+\subsection{Пусть сказанное выше чистейшая правда, тогда}
+\begin{center} $({x}^{3})^{\prime} = {3}\cdot{{x}^{2}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({x}+{(\sin{x})})^{\prime} = ({1}+{(\cos{x})})$ \end{center} 
+\subsection{В силу доказанного факта можем заметить}
+\begin{center} $({30}\cdot{{x}^{3}})^{\prime} = {30}\cdot{{3}\cdot{{x}^{2}}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({x}^{({x}+{(\sin{x})})})^{\prime} = ({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})$ \end{center} 
+\subsection{Для данного утверждения рассуждения аналогичны}
+\begin{center} $(\sin({{30}\cdot{{x}^{3}})})^{\prime} = {\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $(\cos{x})^{\prime} = ({-1}\cdot{(\sin{x})})$ \end{center} 
+\subsection{Очевидно, что}
+\begin{center} $({20}\cdot{x})^{\prime} = 20$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({1}+{(\cos{x})})^{\prime} = ({-1}\cdot{(\sin{x})})$ \end{center} 
+\subsection{По свойству 32 замечания 333}
+\begin{center} $({{20}\cdot{x}}+{1})^{\prime} = 20$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $(\ln{x})^{\prime} = (\frac{1}{x})$ \end{center} 
+\subsection{Последовательным применением теорем 1488 и 228 получаем}
+\begin{center} $((\cos({{{20}\cdot{x}}+{1})}))^{\prime} = {{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $({({1}+{(\cos{x})})}\cdot{(\ln{x})})^{\prime} = ({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})$ \end{center} 
+\subsection{Из определения 5 следует тот факт, что}
+\begin{center} $({(\cos({{{20}\cdot{x}}+{1})})}^{3})^{\prime} = {{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}$ \end{center} 
 
-\subsection{Шаг}
-\begin{center} $(\sin{x})^{\prime} = (\cos{x})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({x}+{(\sin{x})})^{\prime} = ({1}+{(\cos{x})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $(\frac{1}{x})^{\prime} = (\frac{-1}{({x}^{2})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})^{\prime} = ({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})^{\prime} = ({({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})}+{({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})^{\prime} = ({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})}+{({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{x})^{\prime} = ({({({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})}+{({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})})})})}\cdot{x})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $(\sin{x})^{\prime} = (\cos{x})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({x}+{(\sin{x})})^{\prime} = ({1}+{(\cos{x})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({x}^{({x}+{(\sin{x})})})^{\prime} = ({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({1}+{({x}^{({x}+{(\sin{x})})})})^{\prime} = ({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})$ \end{center} 
-
-\subsection{Шаг}
-\begin{center} $({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{x})}+{({1}+{({x}^{({x}+{(\sin{x})})})})})^{\prime} = ({({({({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})}+{({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})})})})}\cdot{x})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})})$ \end{center} 
+\subsection{Из полученного следует}
+\begin{center} $({\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}})^{\prime} = {{\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}}+{{{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}}$ \end{center} 
 
 \titleformat{\subsection}{\normalfont\bfseries}{}{0em}{\thesubsection \ #1\ }
 \subsection{Результат}
-\begin{center} $f^{(2)}(x) = ({({({({({({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({({-1}\cdot{(\sin{x})})}\cdot{(\ln{x})})}+{({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})})}+{({({({1}+{(\cos{x})})}\cdot{(\frac{1}{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{-1}{({x}^{2})})})})})})})}\cdot{x})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})})}+{({({x}^{({x}+{(\sin{x})})})}\cdot{({({({1}+{(\cos{x})})}\cdot{(\ln{x})})}+{({({x}+{(\sin{x})})}\cdot{(\frac{1}{x})})})})})$ \end{center} 
-\begin{center} $f^{2}(2) = 68.2552$ \end{center}
+\begin{center} $f^{(0)}(x) = {\sin({{30}\cdot{{x}^{3}})}}+{{(\cos({{{20}\cdot{x}}+{1})})}^{3}}$ \end{center} 
+\begin{center} $f^{(1)}(x) = {{\cos({{30}\cdot{{x}^{3}})}}\cdot{{30}\cdot{{3}\cdot{{x}^{2}}}}}+{{{3}\cdot{{(\cos({{{20}\cdot{x}}+{1})})}^{2}}}\cdot{{{(-1)}\cdot{\sin({{{20}\cdot{x}}+{1})}}}\cdot{20}}}$ \end{center} 
+\begin{center} $f^{1}(0) = -14.7389$ \end{center}
 \section{Ответ}
-\begin{center} $f(x) = 17.025 + \frac{36.4493}{1!}\cdot(x - 2)^{1} + \frac{68.2552}{2!}\cdot(x - 2)^{2} + o((x - 2)^{2})$ \end{center}
+\begin{center} $f(x) = 0.157729 + \frac{-14.7389}{1!}\cdot(x - 0)^{1} + o((x - 0)^{1})$ \end{center}
 \section{График членов Тейлора}
 \pgfplotsset{
 	colormap={bright}{
-	rgb255=(213,9,83),
-	rgb255=(157,218,50),
-	rgb255=(75,226,243)
+	rgb255=(220,102,85),
+	rgb255=(240,66,204)
 }}
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
 \begin{axis} [
 	legend pos = north west,
+	restrict y to domain=-2:2,
+	restrict x to domain=-3:3,
 	xlabel = {$x$},
 	ylabel = {$f(x)$},
 	width = 300,
@@ -163,13 +142,11 @@
 	cycle list={[of colormap]},
 	every axis plot/.append style={mark=none,ultra thick}
 ]
-\addplot+ [samples=750]{17.025};
-\addplot+ [samples=750]{17.025 + (36.4493/1) * (x - 2) ^ 1};
-\addplot+ [samples=750]{17.025 + (36.4493/1) * (x - 2) ^ 1 + (68.2552/2) * (x - 2) ^ 2};
+\addplot+ [samples=750]{0.157729};
+\addplot+ [samples=750]{0.157729 + (-14.7389/1) * (x - 0) ^ 1};
 \legend{
 	$o({x^{0}})$,
-	$o({x^{1}})$,
-	$o({x^{2}})$
+	$o({x^{1}})$
 }
 \end{axis}
 \end{tikzpicture}

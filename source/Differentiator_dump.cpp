@@ -352,6 +352,7 @@ BinaryTreeStatusCode NodeGraphDump(Node_t* cur_root, FILE* dot_file, DumpLogInfo
 	} while(0)
 
 	SPECIFIER_LABEL_PRINT(cur_root);
+	DOT_PRINTF("| subtreesize: %zu", cur_root->subtree_size);
 	DOT_PRINTF("| { <left> Left\\n");
 	SPECIFIER_LABEL_PRINT(cur_root->left);
 	DOT_PRINTF("| Parent\\n");

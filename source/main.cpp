@@ -23,8 +23,9 @@ int main() {
 	TREE_CTOR(&tree, &id_name_table);
 
 	READ_EXPRESSION(&tree, &id_name_table, &lexer);
-	Calculator(&tree, &id_name_table);
 
+	INIT_TREE(diff_tree);
+	DIFFERENTIATION(&tree, &diff_tree, &id_name_table, 0);
 	GET_TAYLOR(&tree, &id_name_table);
 
 	LEXER_DTOR(&lexer);

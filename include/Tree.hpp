@@ -71,6 +71,7 @@ union Data_t {
 struct Node_t {
 	NodeType type;
 	union Data_t data;
+	size_t subtree_size;
 	Node_t* left;
 	Node_t* right;
 	Node_t* parent;
@@ -89,6 +90,7 @@ struct Tree {
 };
 
 const Number_t UNKNOWN_WHAT = -666;
+const size_t MAX_SUBTREE_SIZE = 20;
 
 BinaryTreeStatusCode TreeCtor(Tree* tree);
 BinaryTreeStatusCode TreeDtor(Node_t* node);
@@ -102,6 +104,7 @@ Node_t* FindTreeRoot(Node_t* node);
 BinaryTreeStatusCode SetNodeValue(Node_t* node, Data_t data);
 BinaryTreeStatusCode NodePrintData(Node_t* node);
 BinaryTreeStatusCode ReplaceUnknownWhat(Node_t* node, Data_t data, NodeType type);
+BinaryTreeStatusCode SubtreeSizeFiller(Node_t* node);
 
 const char* OpNameTableGetMathSymbol(OpNum op_number);
 const char* OpNameTableGetTexSymbol(OpNum op_number);
